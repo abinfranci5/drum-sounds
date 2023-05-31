@@ -16,6 +16,8 @@ animation(buttonInnerHtml);
 document.addEventListener("keydown",function(event){
     makesound(event.key);
 
+    animation(event.key);
+
 });
 
 function makesound(key){
@@ -56,8 +58,13 @@ function makesound(key){
 
 }
 
-/*function animation(key){
+function animation(key){
     var activebutton = document.querySelector("." + key);
-}*/
+    activebutton.classList.add("pressed");
+
+    setTimeout(function(){
+        activebutton.classList.remove("pressed");
+    },100);
+}
   
   
